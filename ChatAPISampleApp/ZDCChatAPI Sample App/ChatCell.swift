@@ -16,6 +16,22 @@
 
 import UIKit
 
+/**
+ * Regex syntax sugar
+ */
+func matchesForRegexInText(regex: String!, text: String!) -> [String] {
+  
+  do {
+    let regex = try NSRegularExpression(pattern: regex, options: [])
+    let nsString = text as NSString
+    let results = regex.matchesInString(text, options: [], range: NSMakeRange(0, nsString.length))
+    
+    return results.map { nsString.substringWithRange($0.range)}
+  } catch let error as NSError {
+    print("invalid regex: \(error.localizedDescription)")
+    return []
+  }
+}
 
 /// Chat General Cell
 class ChatCell: UITableViewCell{
@@ -23,11 +39,24 @@ class ChatCell: UITableViewCell{
   /// Bubble view
   @IBOutlet var bubbleView: BubbleView!
   
+  
+
+
+  /*
+  let nsString = text as NSString
+  let results = regex.matchesInString(text,
+                                      options: [], range: NSMakeRange(0, nsString.length))
+  return results.map { nsString.substringWithRange($0.range)}
+  */
+  
   /// List of chat events received
   var chatEvent: ChatUIEvent! {
     didSet {
       bubbleState = chatEvent.confirmed ? .Confirmed : .NotConfirmed
       bubbleView.timestamp = chatEvent.timeStamp
+      
+  
+      
     }
   }
   
@@ -54,13 +83,94 @@ class MessageChatCell: ChatCell {
   
   @IBOutlet var messageLabel: UILabel!
   
+  private var scanned: Bool = false;
+  
   override var chatEvent: ChatUIEvent! {
     didSet {
       super.chatEvent = chatEvent
       if let chatTextCell = chatEvent as? ChatMessageEventType {
-        textContent = chatTextCell.text
+        
+        
+        //de-dupes events because this fires a lot of times per message
+        if (!scanned) {
+          textContent = chatTextCell.text
+          
+          let scanResult = matchesForRegexInText("^requestScreenShare\\|([\\w\\d]+)$", text: textContent);
+          
+          if (scanResult.count > 0) {
+            let parts = scanResult[0].characters.split{$0 == "|"}.map(String.init);
+            let authToken = parts[1];
+            
+            print("######### ScreenShare Request Detected:", authToken, "\nRemoving object from chat cell and replacing with button");
+            
+            //Clear out the cell
+            for subview in self.subviews {
+              subview.removeFromSuperview()
+            }
+            
+            //Add replacement Object
+            
+            
+            let button = UIButton(type: .System) // let preferred over var here
+//            button.frame = CGRectMake(0, 0, 300, 75)
+            button.backgroundColor = UIColor.orangeColor();
+            button.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal);
+            button.contentEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
+            button.layer.cornerRadius = 10;
+            button.clipsToBounds = true
+            button.setTitle("Share Screen With Agent", forState: UIControlState.Normal)
+            
+      
+            //            button.addTarget(self, action: "Action:", forControlEvents: UIControlEvents.TouchUpInside)
+            button.actionHandle(controlEvents: UIControlEvents.TouchUpInside, ForAction:{() -> Void in
+              print("Touch Detected!", authToken);
+            })
+  
+            button.translatesAutoresizingMaskIntoConstraints = false
+//            xx.font = UIFont.systemFontOfSize(11)
+
+            self.addSubview(button)
+            
+            
+            
+          }
+          
+
+          
+          scanned = true;
+        }
+        
+
+        
+        
       }
+      
+      
     }
+  }
+}
+
+extension UIButton {
+  
+  
+  private func actionHandleBlock(action:(() -> Void)? = nil) {
+    struct __ {
+      static var action :(() -> Void)?
+    }
+    if action != nil {
+      __.action = action
+    } else {
+      __.action?()
+    }
+  }
+  
+  @objc private func triggerActionHandleBlock() {
+    self.actionHandleBlock()
+  }
+  
+  func actionHandle(controlEvents control :UIControlEvents, ForAction action:() -> Void) {
+    self.actionHandleBlock(action)
+    self.addTarget(self, action: #selector(UIButton.triggerActionHandleBlock), forControlEvents: control)
   }
 }
 

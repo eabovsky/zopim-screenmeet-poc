@@ -111,7 +111,7 @@ final class BubbleView: UIView {
     verifiedImage = UIImageView(image: UIImage.init(named: "check-mark"))
     verifiedImage.contentMode = .ScaleAspectFit
     verifiedImage.translatesAutoresizingMaskIntoConstraints = false
-    self.addSubview(verifiedImage)
+    self.addSubview(verifiedImage)  
     
     setupConstraints()
   }

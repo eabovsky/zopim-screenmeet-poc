@@ -185,7 +185,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D7C1C8CD1D2E923B00F2C0C3 /* Build configuration list for PBXNativeTarget "ZDCChatAPI Sample App" */;
 			buildPhases = (
-				5EE2C70312CC25FC7DB000A0 /* 📦 Check Pods Manifest.lock */,
+				5EE2C70312CC25FC7DB000A0 /* [CP] Check Pods Manifest.lock */,
 				A91DB5EA84692AAD91CC9D52 /* [CP] Check Pods Manifest.lock */,
 				D7C1C8B71D2E923B00F2C0C3 /* Sources */,
 				D7C1C8B81D2E923B00F2C0C3 /* Frameworks */,
@@ -266,14 +266,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZDCChatAPI Sample App/Pods-ZDCChatAPI Sample App-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5EE2C70312CC25FC7DB000A0 /* 📦 Check Pods Manifest.lock */ = {
+		5EE2C70312CC25FC7DB000A0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;

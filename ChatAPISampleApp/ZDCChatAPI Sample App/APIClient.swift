@@ -60,7 +60,7 @@ final class APIClient {
     setupListeners()
     
     let config = ZDCAPIConfig()
-    chat.startChatWithAccountKey("2PT4TD5ox8d19nrLoBAGpMk87L4r4VQQ", config: config)
+    chat.startChatWithAccountKey("476NiNORvNGOc4WSDE87u8zKNUvtYxBx", config: config)
     
   }
   
