@@ -133,13 +133,18 @@ class MessageChatCell: ChatCell {
                 if (status == .SUCCESS) {
                   //Authentication is successful
                   
-                  ScreenMeet.sharedInstance().startStream()  { (status) in
-                    if (status == .SUCCESS) {
-                      print("Meeting stream started.")
-                    } else {
-                      print("Error: \(status)")
+                  if (ScreenMeet.sharedInstance().getStreamState() != StreamStateType.ACTIVE) {
+                  
+                    ScreenMeet.sharedInstance().startStream()  { (status) in
+                      if (status == .SUCCESS) {
+                        print("Meeting stream started.")
+                      } else {
+                        print("Error: \(status)")
+                      }
+                      
                     }
-                    
+                  } else {
+                    print("ALREADY SCREEN SHARING");                    
                   }
                   
                   

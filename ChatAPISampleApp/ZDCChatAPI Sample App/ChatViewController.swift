@@ -21,6 +21,7 @@ import ScreenMeetSDK
 
 class ChatViewController: UIViewController {
   
+  @IBOutlet weak var stopButton: UIBarButtonItem!
   @IBOutlet var tableView: UITableView!
   @IBOutlet var bottomConstraint: NSLayoutConstraint!
   @IBOutlet weak var messageTextField: UITextField!
@@ -45,16 +46,32 @@ class ChatViewController: UIViewController {
     setupKeyboardEvents()
     updateSendButtonState()
     
+
+    setStopButtonState();
+   
     
     ScreenMeet.sharedInstance().onStreamStateChanged({newState, reason in
-      print("Screen Share stream state was changed to", newState)
-      
+      self.setStopButtonState();
     })
     
     
     
   }
   
+  func setStopButtonState() {
+    if (ScreenMeet.sharedInstance().getStreamState() == StreamStateType.ACTIVE) {
+      self.stopButton.enabled = true
+      self.stopButton.title = "Stop Screenshare"
+    } else {
+      self.stopButton.enabled = false
+      self.stopButton.title = "";
+    }
+  }
+  
+  @IBAction func stopScreenShare(sender: AnyObject) {
+    ScreenMeet.sharedInstance().stopStream()
+  }
+    
   override func viewDidAppear(animated: Bool) {
     
   }
