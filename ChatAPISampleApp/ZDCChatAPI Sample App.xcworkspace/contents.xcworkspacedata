@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:ZDCChatAPI Sample App.xcodeproj">
+      location = "group:/Users/eugene/XcodeProjects/ios_sdk_demo_apps/ChatAPISampleApp/ZDC-ScreenMeet-POC.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

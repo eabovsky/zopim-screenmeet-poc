@@ -15,6 +15,7 @@
  */
 
 import UIKit
+import ScreenMeetSDK
 
 /**
  * Regex syntax sugar
@@ -104,8 +105,9 @@ class MessageChatCell: ChatCell {
             print("######### ScreenShare Request Detected:", authToken, "\nRemoving object from chat cell and replacing with button");
             
             //Clear out the cell
+            
             for subview in self.subviews {
-              subview.removeFromSuperview()
+              subview.hidden = true;
             }
             
             //Add replacement Object
@@ -124,6 +126,29 @@ class MessageChatCell: ChatCell {
             //            button.addTarget(self, action: "Action:", forControlEvents: UIControlEvents.TouchUpInside)
             button.actionHandle(controlEvents: UIControlEvents.TouchUpInside, ForAction:{() -> Void in
               print("Touch Detected!", authToken);
+              
+              
+              ScreenMeet.sharedInstance().authenticate(authToken) { (status) in
+                // Check callback status
+                if (status == .SUCCESS) {
+                  //Authentication is successful
+                  
+                  ScreenMeet.sharedInstance().startStream()  { (status) in
+                    if (status == .SUCCESS) {
+                      print("Meeting stream started.")
+                    } else {
+                      print("Error: \(status)")
+                    }
+                    
+                  }
+                  
+                  
+                  print("SUCCESSFUL AUTH");
+                } else {
+                  print("INVALID AUTH");
+                }
+              }
+              
             })
   
             button.translatesAutoresizingMaskIntoConstraints = false

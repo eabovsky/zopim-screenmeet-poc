@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ZDCChatAPI_Sample_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ZDC_ScreenMeet_POC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -43,7 +43,7 @@
         <!--Chat-->
         <scene sceneID="2Oy-FE-E9O">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Cg3-UQ-aCN" customClass="ChatViewController" customModule="ZDCChatAPI_Sample_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Cg3-UQ-aCN" customClass="ChatViewController" customModule="ZDC_ScreenMeet_POC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Nfj-g3-dgr"/>
                         <viewControllerLayoutGuide type="bottom" id="jla-xf-U35"/>
@@ -114,21 +114,21 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="490"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="agentCell" rowHeight="90" id="k4g-Ms-BgL" customClass="AgentMessageCell" customModule="ZDCChatAPI_Sample_App" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="agentCell" rowHeight="90" id="k4g-Ms-BgL" customClass="AgentMessageCell" customModule="ZDC_ScreenMeet_POC" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="k4g-Ms-BgL" id="8xd-T9-wmf">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yds-iE-GVh" customClass="AgentImageView" customModule="ZDCChatAPI_Sample_App" customModuleProvider="target">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yds-iE-GVh" customClass="AgentImageView" customModule="ZDC_ScreenMeet_POC" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="8" width="34" height="34"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="34" id="ZFj-iQ-TYm"/>
                                                         <constraint firstAttribute="width" constant="34" id="x2z-Lz-dwm"/>
                                                     </constraints>
                                                 </imageView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OG6-n0-3O2" customClass="BubbleView" customModule="ZDCChatAPI_Sample_App" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OG6-n0-3O2" customClass="BubbleView" customModule="ZDC_ScreenMeet_POC" customModuleProvider="target">
                                                     <rect key="frame" x="52" y="8" width="58" height="70"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMM-bT-m3Y">
@@ -167,14 +167,14 @@
                                             <outlet property="messageLabel" destination="aMM-bT-m3Y" id="LD2-bW-xAC"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="visitorCell" rowHeight="90" id="iTo-Q7-HdP" userLabel="visitorCell" customClass="VisitorMessageCell" customModule="ZDCChatAPI_Sample_App" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="visitorCell" rowHeight="90" id="iTo-Q7-HdP" userLabel="visitorCell" customClass="VisitorMessageCell" customModule="ZDC_ScreenMeet_POC" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="118" width="600" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iTo-Q7-HdP" id="Pvw-nw-vdl">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="34f-iv-itW" customClass="BubbleView" customModule="ZDCChatAPI_Sample_App" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="34f-iv-itW" customClass="BubbleView" customModule="ZDC_ScreenMeet_POC" customModuleProvider="target">
                                                     <rect key="frame" x="522" y="8" width="58" height="70"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rg5-Ln-ohg">
@@ -210,14 +210,14 @@
                                             <outlet property="messageLabel" destination="rg5-Ln-ohg" id="opn-5y-fvB"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="visitorImageCell" rowHeight="281" id="OVN-E6-wgx" customClass="VisitorImageCell" customModule="ZDCChatAPI_Sample_App" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="visitorImageCell" rowHeight="281" id="OVN-E6-wgx" customClass="VisitorImageCell" customModule="ZDC_ScreenMeet_POC" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="208" width="600" height="281"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OVN-E6-wgx" id="dKg-8F-26h">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="281"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YmI-uL-ecs" customClass="BubbleView" customModule="ZDCChatAPI_Sample_App" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YmI-uL-ecs" customClass="BubbleView" customModule="ZDC_ScreenMeet_POC" customModuleProvider="target">
                                                     <rect key="frame" x="108" y="12" width="472" height="257"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" misplaced="YES" placeholderIntrinsicWidth="464" placeholderIntrinsicHeight="207" translatesAutoresizingMaskIntoConstraints="NO" id="Xn5-74-4w3">
@@ -257,14 +257,14 @@
                                             <outlet property="imageContentView" destination="Xn5-74-4w3" id="WmO-xn-hst"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="agentImageCell" rowHeight="281" id="iKY-Tv-Rxi" customClass="AgentImageCell" customModule="ZDCChatAPI_Sample_App" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="agentImageCell" rowHeight="281" id="iKY-Tv-Rxi" customClass="AgentImageCell" customModule="ZDC_ScreenMeet_POC" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="489" width="600" height="281"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iKY-Tv-Rxi" id="yGa-cY-G4T">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="281"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GXN-2b-ifd" customClass="BubbleView" customModule="ZDCChatAPI_Sample_App" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GXN-2b-ifd" customClass="BubbleView" customModule="ZDC_ScreenMeet_POC" customModuleProvider="target">
                                                     <rect key="frame" x="52" y="8" width="440" height="261"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" misplaced="YES" placeholderIntrinsicWidth="464" placeholderIntrinsicHeight="207" translatesAutoresizingMaskIntoConstraints="NO" id="SWb-Uq-iXL">
@@ -288,7 +288,7 @@
                                                         <outlet property="contentView" destination="SWb-Uq-iXL" id="Fem-1Y-m0D"/>
                                                     </connections>
                                                 </view>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oAk-Jd-diY" customClass="AgentImageView" customModule="ZDCChatAPI_Sample_App" customModuleProvider="target">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oAk-Jd-diY" customClass="AgentImageView" customModule="ZDC_ScreenMeet_POC" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="8" width="34" height="34"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="34" id="9tK-qZ-DYx"/>

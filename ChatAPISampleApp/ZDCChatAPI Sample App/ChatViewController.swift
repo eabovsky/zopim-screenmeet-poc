@@ -17,6 +17,7 @@
 import UIKit
 import DKImagePickerController
 import JLToast
+import ScreenMeetSDK
 
 class ChatViewController: UIViewController {
   
@@ -43,6 +44,15 @@ class ChatViewController: UIViewController {
     
     setupKeyboardEvents()
     updateSendButtonState()
+    
+    
+    ScreenMeet.sharedInstance().onStreamStateChanged({newState, reason in
+      print("Screen Share stream state was changed to", newState)
+      
+    })
+    
+    
+    
   }
   
   override func viewDidAppear(animated: Bool) {
