@@ -45,33 +45,10 @@ class ChatViewController: UIViewController {
     
     setupKeyboardEvents()
     updateSendButtonState()
-    
 
-    setStopButtonState();
-   
-    
-    ScreenMeet.sharedInstance().onStreamStateChanged({newState, reason in
-      self.setStopButtonState();
-    })
-    
-    
-    
-  }
+
+  }  
   
-  func setStopButtonState() {
-    if (ScreenMeet.sharedInstance().getStreamState() == StreamStateType.ACTIVE) {
-      self.stopButton.enabled = true
-      self.stopButton.title = "Stop Screenshare"
-    } else {
-      self.stopButton.enabled = false
-      self.stopButton.title = "";
-    }
-  }
-  
-  @IBAction func stopScreenShare(sender: AnyObject) {
-    ScreenMeet.sharedInstance().stopStream()
-  }
-    
   override func viewDidAppear(animated: Bool) {
     
   }

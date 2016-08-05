@@ -332,18 +332,11 @@
                             <constraint firstItem="Hky-IL-0yk" firstAttribute="top" secondItem="pAS-ii-SS8" secondAttribute="bottom" id="vUr-3E-C9r"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Chat" id="9DQ-uR-JMC">
-                        <barButtonItem key="rightBarButtonItem" title="Stop Screenshare" id="jDm-om-oHI">
-                            <connections>
-                                <action selector="stopScreenShare:" destination="Cg3-UQ-aCN" id="twG-FX-Osc"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Chat" id="9DQ-uR-JMC"/>
                     <connections>
                         <outlet property="bottomConstraint" destination="Syu-MM-IIG" id="98O-s0-3Ga"/>
                         <outlet property="messageTextField" destination="zCQ-7x-tkp" id="SMn-pW-iPT"/>
                         <outlet property="sendButton" destination="clg-Sh-4LS" id="R53-8U-QRa"/>
-                        <outlet property="stopButton" destination="jDm-om-oHI" id="3wD-VY-kIi"/>
                         <outlet property="tableView" destination="pAS-ii-SS8" id="0Dh-qb-Fvj"/>
                     </connections>
                 </viewController>

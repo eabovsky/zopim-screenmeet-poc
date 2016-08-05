@@ -180,29 +180,7 @@ class MessageChatCell: ChatCell {
   }
 }
 
-extension UIButton {
-  
-  
-  private func actionHandleBlock(action:(() -> Void)? = nil) {
-    struct __ {
-      static var action :(() -> Void)?
-    }
-    if action != nil {
-      __.action = action
-    } else {
-      __.action?()
-    }
-  }
-  
-  @objc private func triggerActionHandleBlock() {
-    self.actionHandleBlock()
-  }
-  
-  func actionHandle(controlEvents control :UIControlEvents, ForAction action:() -> Void) {
-    self.actionHandleBlock(action)
-    self.addTarget(self, action: #selector(UIButton.triggerActionHandleBlock), forControlEvents: control)
-  }
-}
+
 
 extension MessageChatCell: TextCellType {
   
