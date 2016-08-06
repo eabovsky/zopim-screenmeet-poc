@@ -29,9 +29,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     ScreenMeet.initSharedInstance("ZDChatPOC", environment: .PRODUCTION)
     
+
+    
     self.window?.tintColor = UIColor.whiteColor()
     return true
   }
+  
 }
 
 
@@ -42,6 +45,7 @@ extension UIViewController {
     toastLabel.backgroundColor = UIColor.blackColor()
     toastLabel.textColor = UIColor.whiteColor()
     toastLabel.textAlignment = NSTextAlignment.Center;
+
     toastLabel.numberOfLines = 0;
     self.view.addSubview(toastLabel)
     toastLabel.text = message
@@ -62,9 +66,9 @@ extension UIViewController {
 
 extension UINavigationController {
   
-  func initSMWidget() {
-    
-
+  
+  func onRotate(ww: UIButton) {
+   
     
     //
     
@@ -74,7 +78,9 @@ extension UINavigationController {
   public override func viewDidLoad() {
     super.viewDidLoad();
     
-    let widget = UIButton(frame: CGRectMake(self.view.frame.size.width - 130, 25, 125, 25) )
+
+    
+    let widget = UIButton(frame: CGRectMake(self.view.frame.size.width - 130, 25, 130, 25) )
     
     widget.backgroundColor = UIColor.redColor()
     
@@ -83,12 +89,14 @@ extension UINavigationController {
     widget.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
     widget.titleLabel!.font = widget.titleLabel!.font.fontWithSize(12);
     widget.layer.cornerRadius = 5
+    widget.contentEdgeInsets = UIEdgeInsetsMake(5,5,5,5)
     widget.clipsToBounds  =  true
     widget.hidden = true;
     widget.addTarget(self, action: #selector(stopScreenShare), forControlEvents: .TouchUpInside)
+    widget.translatesAutoresizingMaskIntoConstraints = false
 
-
-    
+    NSLayoutConstraint(item: widget, attribute: .Trailing, relatedBy: .Equal, toItem: view, attribute: .TrailingMargin, multiplier: 1.0, constant: 0.0).active = true
+    NSLayoutConstraint(item: widget, attribute: .Top, relatedBy: .Equal, toItem: view, attribute: .Top, multiplier: 1.0, constant: 15).active = true
     
     ScreenMeet.sharedInstance().onStreamStateChanged({newState, reason in
       

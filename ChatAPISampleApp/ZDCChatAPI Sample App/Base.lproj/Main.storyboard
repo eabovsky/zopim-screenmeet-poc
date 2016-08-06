@@ -27,11 +27,28 @@
                                     <segue destination="Cg3-UQ-aCN" kind="show" id="EO6-pq-JkW"/>
                                 </connections>
                             </button>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Zh4-Ve-mmg">
+                                <rect key="frame" x="0.0" y="384" width="600" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="492131262.969046">
+                                    <!--2016-08-05 23:07:42 +0000-->
+                                </date>
+                            </datePicker>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="1Ql-Jq-mfW">
+                                <rect key="frame" x="-2" y="346" width="604" height="31"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="KoE-Ix-0gi" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="47" id="R4g-rf-jfE"/>
-                            <constraint firstItem="KoE-Ix-0gi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nqB-IA-hhA"/>
+                            <constraint firstItem="Zh4-Ve-mmg" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="2cr-Kg-6gE"/>
+                            <constraint firstItem="1Ql-Jq-mfW" firstAttribute="leading" secondItem="Zh4-Ve-mmg" secondAttribute="leading" id="8vN-jW-f3a"/>
+                            <constraint firstItem="1Ql-Jq-mfW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="NDp-Tw-26V"/>
+                            <constraint firstAttribute="trailing" secondItem="1Ql-Jq-mfW" secondAttribute="trailing" id="gwT-oZ-F1K"/>
+                            <constraint firstItem="KoE-Ix-0gi" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="47" id="jW6-5M-ibi"/>
+                            <constraint firstItem="KoE-Ix-0gi" firstAttribute="centerX" secondItem="1Ql-Jq-mfW" secondAttribute="centerX" id="kfL-uB-TRG"/>
+                            <constraint firstItem="Zh4-Ve-mmg" firstAttribute="top" secondItem="1Ql-Jq-mfW" secondAttribute="bottom" constant="8" symbolic="YES" id="pQZ-HF-BtH"/>
+                            <constraint firstItem="1Ql-Jq-mfW" firstAttribute="trailing" secondItem="Zh4-Ve-mmg" secondAttribute="trailing" id="xCn-8v-sd9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="beX-tL-4lx"/>

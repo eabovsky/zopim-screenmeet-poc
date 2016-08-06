@@ -106,24 +106,26 @@ class MessageChatCell: ChatCell {
             
             //Clear out the cell
             
-            for subview in self.subviews {
-              subview.hidden = true;
-            }
+            
+            self.messageLabel.hidden = true;
             
             //Add replacement Object
             
             
             let button = UIButton(type: .System) // let preferred over var here
-//            button.frame = CGRectMake(0, 0, 300, 75)
             button.backgroundColor = UIColor.orangeColor();
             button.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal);
             button.contentEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
             button.layer.cornerRadius = 10;
             button.clipsToBounds = true
-            button.setTitle("Share Screen With Agent", forState: UIControlState.Normal)
+            button.setTitle("Tap To Share Screen With Me", forState: UIControlState.Normal)
+            //button.leadingAnchor.constraintEqualToAnchor(self.leadingAnchor, constant: 10).active = true
             
-      
-            //            button.addTarget(self, action: "Action:", forControlEvents: UIControlEvents.TouchUpInside)
+            self.addSubview(button)
+            
+            NSLayoutConstraint(item: button, attribute: .Left, relatedBy: .Equal, toItem: self.messageLabel, attribute: .Left, multiplier: 1.0, constant: 0).active = true
+            NSLayoutConstraint(item: button, attribute: .Top, relatedBy: .Equal, toItem: self.messageLabel, attribute: .Top, multiplier: 1.0, constant: 10).active = true
+            
             button.actionHandle(controlEvents: UIControlEvents.TouchUpInside, ForAction:{() -> Void in
               print("Touch Detected!", authToken);
               
@@ -159,7 +161,7 @@ class MessageChatCell: ChatCell {
             button.translatesAutoresizingMaskIntoConstraints = false
 //            xx.font = UIFont.systemFontOfSize(11)
 
-            self.addSubview(button)
+
             
             
             
